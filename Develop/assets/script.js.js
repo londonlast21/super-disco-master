@@ -11,9 +11,10 @@ $("<p>" + todayDate + "<p>").appendTo("currentDay.lead");
 
 
 //onclick to edit events
-$("col-md-9").click(function(){
-    alert("The paragraph was clicked.");
-  });
-
+$(document).ready(function() {
+    $("div.col-md-9").click(function(){
+        alert("hi");
+    });
+});
 
 
