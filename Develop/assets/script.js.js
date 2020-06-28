@@ -1,59 +1,59 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-//get and set today's date
-var todayDate = moment().format('YYYY-MM-DD');
-$("#currentDay").text(todayDate);
+    //get and set today's date
+    var todayDate = moment().format('YYYY-MM-DD');
+    $("#currentDay").text(todayDate);
 
-//onclick event saves textarea content to localStorage
-$(".fa.fa-lock.9a").on("click", function() {
-    //get nearby values
-    var event = $.trim($("#events9a").val());
+    //onclick event saves textarea content to localStorage
+    $(".fa.fa-lock.9a").on("click", function () {
+        //get nearby values
+        var event = $.trim($("#events9a").val());
 
-    localStorage.setItem("task9a", JSON.stringify(event));
+        localStorage.setItem("task9a", JSON.stringify(event));
 
-});
-$(".fa.fa-lock.10a").on("click", function() {
-    var event = $.trim($("#events10a").val());
+    });
+    $(".fa.fa-lock.10a").on("click", function () {
+        var event = $.trim($("#events10a").val());
 
-    localStorage.setItem("task10a", JSON.stringify(event));
+        localStorage.setItem("task10a", JSON.stringify(event));
 
-});
-$(".fa.fa-lock.11a").on("click", function() {
-    var event = $.trim($("#events11a").val());
+    });
+    $(".fa.fa-lock.11a").on("click", function () {
+        var event = $.trim($("#events11a").val());
 
-    localStorage.setItem("task11a", JSON.stringify(event));
-});
-$(".fa.fa-lock.12p").on("click", function() {
-    var event = $.trim($("#events12p").val());
+        localStorage.setItem("task11a", JSON.stringify(event));
+    });
+    $(".fa.fa-lock.12p").on("click", function () {
+        var event = $.trim($("#events12p").val());
 
-    localStorage.setItem("task12p", JSON.stringify(event));
-});
-$(".fa.fa-lock.1p").on("click", function() {
-    var event = $.trim($("#events1p").val());
+        localStorage.setItem("task12p", JSON.stringify(event));
+    });
+    $(".fa.fa-lock.1p").on("click", function () {
+        var event = $.trim($("#events1p").val());
 
-    localStorage.setItem("task1p", JSON.stringify(event));
-});
-$(".fa.fa-lock.2p").on("click", function() {
-    var event = $.trim($("#events2p").val());
+        localStorage.setItem("task1p", JSON.stringify(event));
+    });
+    $(".fa.fa-lock.2p").on("click", function () {
+        var event = $.trim($("#events2p").val());
 
-    localStorage.setItem("task2p", JSON.stringify(event));
-});
-$(".fa.fa-lock.3p").on("click", function() {
-    var event = $.trim($("#events3p").val());
+        localStorage.setItem("task2p", JSON.stringify(event));
+    });
+    $(".fa.fa-lock.3p").on("click", function () {
+        var event = $.trim($("#events3p").val());
 
-    localStorage.setItem("task3p", JSON.stringify(event));
-});
-$(".fa.fa-lock.4p").on("click", function() {
-    var event = $.trim($("#events4p").val());
+        localStorage.setItem("task3p", JSON.stringify(event));
+    });
+    $(".fa.fa-lock.4p").on("click", function () {
+        var event = $.trim($("#events4p").val());
 
-    localStorage.setItem("task4p", JSON.stringify(event));
-});
-$(".fa.fa-lock.5p").on("click", function() {
-    var event = $.trim($("#events5p").val());
+        localStorage.setItem("task4p", JSON.stringify(event));
+    });
+    $(".fa.fa-lock.5p").on("click", function () {
+        var event = $.trim($("#events5p").val());
 
-    localStorage.setItem("task5p", JSON.stringify(event));
-});
-
+        localStorage.setItem("task5p", JSON.stringify(event));
+    });
+})
 
 // using localStorage values
 var hour9 = JSON.parse(localStorage.getItem("task9a"));
@@ -77,39 +77,34 @@ $('#events5p').append(hour5);
 
 
 // //change color based on current time
-function (colorCode){
-var realTime = moment().format('HH');
-console.log(realTime);
+function colorCode() {
+    var realTime = moment().format('HH');
+    console.log(realTime);
 
-var blockTime = 
+    $(".time-block").each(function () {
+        var hour = parseInt($(this).attr(("id")))
 
-//var taskTime = 
+        // check if time is less than realTime
+        if (hour < realTime) {
+            $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
 
-
-
-
-// check if time is less than realTime
-if (blockTime < realTime) {
-$("").addClass("past");
-$("").removeClass("present");
-$("").removeClass("future");
-
-}
-//if is greater by one, assign future class
-else if (blockTime = (realTime + 1) {
-$("").removeClass("past");
-$("").addClass("present");
-$("").removeClass("future");
-
-}
-else {
-$("").removeClass("present");
-$("").removeClass("past");
-$("").addClass("future");
+        }
+        
+        else if (hour > realTime) {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
 
 
-}
-else if statement to apply present class
+        }
+        else  {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
 
-
-});
+        }
+    })
+};
+colorCode();
