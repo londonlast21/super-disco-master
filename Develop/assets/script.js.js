@@ -1,20 +1,17 @@
-//variables section//
-
-//today's date
-var todayDate = moment().format('YYYY-MM-DD');
-//tester 
-console.log(todayDate);
-
-// end var section
-
-$("<p>" + todayDate + "<p>").appendTo("currentDay.lead");
-
-
-//onclick to edit events
 $(document).ready(function() {
-    $("div.col-md-9").click(function(){
-        alert("hi");
-    });
+
+//get and set today's date
+var todayDate = moment().format('YYYY-MM-DD');
+$("#currentDay").text(todayDate);
+
+//onclick event saves textarea content to localStorage
+$(".fa.fa-lock").on("click", function() {
+    //get nearby values
+    var event = $.trim($("#events9").val());
+
+    localStorage.setItem("task9am", JSON.stringify(event));
+
+    console.log(localStorage)
+
+})
 });
-
-
