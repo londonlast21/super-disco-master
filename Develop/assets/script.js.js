@@ -62,4 +62,36 @@ $(".fa.fa-lock.5p").on("click", function() {
     localStorage.setItem("task5p", JSON.stringify(event));
 });
 
+
+// using localStorage values
+var hour9 = JSON.parse(localStorage.getItem("task9a"));
+$('#events9a').append(hour9);
+
+var hour10 = JSON.parse(localStorage.getItem("tasks10a"));
+$('#events10a').append(hour10);
+
+var hour11 = JSON.parse(localStorage.getItem("tasks11a"));
+$('#events11a').append(hour11);
+
+var hour12 = JSON.parse(localStorage.getItem("tasks12p"));
+$('#events12p').append(hour12);
+
+var hour1 = JSON.parse(localStorage.getItem("tasks1p"));
+$('#events1p').append(hour1);
+
+var hour2 = JSON.parse(localStorage.getItem("tasks2p"));
+$('#events2p').append(hour2);
+
+var hour3 = JSON.parse(localStorage.getItem("tasks3p"));
+$('#events3p').append(hour3);
+
+var hour4 = JSON.parse(localStorage.getItem("tasks4p"));
+$('#events4p').append(hour4);
+
+var hour5 = JSON.parse(localStorage.getItem("tasks4p"));
+$('#events5p').append(hour5);
+
+
+
+
 });
