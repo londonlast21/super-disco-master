@@ -15,7 +15,8 @@ When you refresh the page, your information will be retained! :)
 
 ## Screenshot:
 
-![Screenshot (42)](https://user-images.githubusercontent.com/65084173/85964268-9aa8e800-b97e-11ea-9694-05a2f4ef8099.png)
+![Screenshot (43)](https://user-images.githubusercontent.com/65084173/85966529-ae0b8180-b985-11ea-8298-ecc253ff59fb.png)
+
 
 ## Link:
 https://londonlast21.github.io/super-disco-master/
